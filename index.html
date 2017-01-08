@@ -1,0 +1,84 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - 100
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<meta charset="utf-8">
+
+<title>Euler's Method Calculator</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body bgcolor="#232732">
+<div>
+<h1 class="head">Euler's Method Calculator</h1>
+<a class ="ripple" href="#Top">Home</a>
+<a class ="ripple" href="#b">How It Works?</a>
+</div>
+
+<!--HOME#232732-->
+
+<div class="full">
+<div align="left" id="Top">
+<h1 class="head3" >HOME</h1>
+</div>
+<div align="center">
+      <h2 class="head2">Apply Euler's Method of Approximation - with graphs and steps</h2>
+</div>
+<div align="center">
+<!--App
+   <object codetype="application/java" classid="java:CartesianPlane.class" archive="EulerMethodCalculator.jar" width="740" height="400"></object>
+-->
+</div>
+<div align="center">
+      <h2 class="head4">Use Calculator Online</h2>
+      <h2 class="head4">Download Calculator</h2>
+</div>
+<div align="center">
+	<a class="button" href="EulerMethodCalculator.jnlp" onclick="return launchApplication('EulerMethodCalculator.jnlp');")><img src="enlarge.png" width="90%" height="90%"></img></a>
+        <a class="button" href="EulerMethodCalculator.jar" download><img src="download.png" width="90%" height="90%"></img></a>
+</div>
+</div>
+
+<!--How it works?
+
+<div id="b" class="full">
+<div align="left">
+<h1 class="head4" id="Register">How it works?</h1>
+</div>
+<div align="center">
+<h2 class="head2">Contest signup open for: </h2>
+<h1 class="head">CIMC/CSMC</h1>
+</div>
+<div align="center">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc0ACg72m2y32n-Pa_NyRx3pXh3EvLfQbUMTSPVN_U5pgswig/viewform?embedded=true" width="760" height="500" frameborder="10" marginheight="0" marginwidth="0">Loading...</iframe>
+</div>
+</div>
+-->
+</html>
+
