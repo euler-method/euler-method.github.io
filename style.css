@@ -24,6 +24,12 @@
 	opacity:1;
 	transition:0s
 }
+p{
+    color: #FFFFFF;
+    font-family: Rockwell;
+display:none;
+font-size:20px;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -48,6 +54,20 @@ font-weight:900;
 display: inline-block;
 margin: 20px;
 top: 25px;
+}
+#nor  {
+    color: #FFFFFF;
+    font-family: Rockwell;
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration:underline;
+background-color: #FF937C;
+    font-family: Copperplate Gothic Light, sans-serif;
+    font-size:14px;
+font-weight:0;
+display: inline-block;
+margin: 0px;
+top: 0px;
 }
 .head {
     color: #FF6D4E;
