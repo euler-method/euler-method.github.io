@@ -1,54 +1,7 @@
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top - 100
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
 </script>
 <script src="http://java.com/js/dtjava.js"></script>
-    <script>
-      function launchApplication(jnlpfile) {
-      dtjava.launch(            {
-      url : 'dist.jnlp',
-      jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZh\
-ZnguY29tIiBocmVmPSJkaXN0LmpubHAiPgogIDxpbmZvcm1hdGlvbj4KICAgIDx0aXRsZT5FdWxlck1ldGhvZENhbGN1bGF0b3I8L3RpdGxlPgogICAgPHZlbmRvcj\
-5BcHBsaWNhdGlvbiB2ZW5kb3I8L3ZlbmRvcj4KICAgIDxkZXNjcmlwdGlvbj5BcHBsaWNhdGlvbiBkZXNjcmlwdGlvbjwvZGVzY3JpcHRpb24+CiAgICA8b2ZmbGlu\
-ZS1hbGxvd2VkLz4KICA8L2luZm9ybWF0aW9uPgogIDxyZXNvdXJjZXM+CiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3\
-Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+CiAgICA8amFyIGhyZWY9ImRpc3QuamFyIiBzaXplPSIyNzkxMCIgZG93bmxvYWQ9Im51bGwiIC8+CiAgPC9yZXNvdXJjZXM+\
-CiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjE0NTAiIGhlaWdodD0iMTA1MCIgbWFpbi1jbGFzcz0iQ2FydGVzaWFuUGxhbmUiICBuYW1lPSJFdWxlck1ldGhvZE\
-NhbGN1bGF0b3IiIC8+CiAgPHVwZGF0ZSBjaGVjaz0iYmFja2dyb3VuZCIvPgo8L2pubHA+Cg=='
-      },
-      {
-      javafx : '8.0+'
-      },
-      {}
-      );
-      return false;
-      }
-    </script>
-
     <script>
       function javafxEmbedCartesianPlane() {
       dtjava.embed(
@@ -76,6 +29,14 @@ NhbGN1bGF0b3IiIC8+CiAgPHVwZGF0ZSBjaGVjaz0iYmFja2dyb3VuZCIvPgo8L2pubHA+Cg=='
       dtjava.addOnloadCallback(javafxEmbedCartesianPlane);
     </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").toggle(1000);
+    });
+});
+</script>
 
 <meta charset="utf-8">
 
@@ -86,49 +47,31 @@ NhbGN1bGF0b3IiIC8+CiAgPHVwZGF0ZSBjaGVjaz0iYmFja2dyb3VuZCIvPgo8L2pubHA+Cg=='
 <body bgcolor="#232732">
 <div>
 <h1 class="head">Euler's Method Calculator</h1>
-<a class ="ripple" href="#Top">Home</a>
-<a class ="ripple" href="#b">How It Works?</a>
+<a class ="ripple" href="index.html">Home</a>
+<a class ="ripple" href="p2.html">How It Works?</a>
 </div>
 
-<!--HOME#232732-->
-
-<div class="full">
-<div align="left" id="Top">
+<!--HOME-->
+<div align="left">
 <h1 class="head3" >HOME</h1>
 </div>
 <div align="center">
       <h2 class="head2">Apply Euler's Method of Approximation - with graphs and steps</h2>
 </div>
 <div align="center">
-<!--App
-   <object codetype="application/java" classid="java:CartesianPlane.class" archive="EulerMethodCalculator.jar" width="740" height="400"></object>
--->
-</div>
-<div align="center">
       <h2 class="head4">Use Calculator Online</h2>
       <h2 class="head4">Download Calculator</h2>
 </div>
 <div align="center">
-	<a class="button" href="dist.jnlp" onclick="return launchApplication('dist.jnlp');")><img src="enlarge.png" width="90%" height="90%"></img></a>
+	<a class="button" id="hide")><img src="enlarge.png" width="90%" height="90%"></img></a>
         <a class="button" href="dist.jar" download><img src="download.png" width="90%" height="90%"></img></a>
 </div>
+<div align="center" style="background-color:#FF937C; width:400px; margin-left:27%;">
+<p>To display the program on your browser, follow the following steps:</p>
+<p>1) Open the website in either Mozilla Firefox or Internet Explorer</p>
+<p>2) <a id="nor" href="https://www.java.com/en/download/faq/exception_sitelist.xml" target="_blank">White-list</a> the website https://euler-method.github.io in your Java settings</p>
 </div>
-<div id='javafx-app-placeholder'></div>
+<div align = "center" id='javafx-app-placeholder'></div>
 
-<!--How it works?
-
-<div id="b" class="full">
-<div align="left">
-<h1 class="head4" id="Register">How it works?</h1>
-</div>
-<div align="center">
-<h2 class="head2">Contest signup open for: </h2>
-<h1 class="head">CIMC/CSMC</h1>
-</div>
-<div align="center">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc0ACg72m2y32n-Pa_NyRx3pXh3EvLfQbUMTSPVN_U5pgswig/viewform?embedded=true" width="760" height="500" frameborder="10" marginheight="0" marginwidth="0">Loading...</iframe>
-</div>
-</div>
--->
 </html>
 
