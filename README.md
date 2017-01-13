@@ -9,4 +9,4 @@ The group website made for the presentation of Euler's method and a differential
 
 - Example questions and lesson written by Abdul Arif
 
-- Program is created by lim495062
+- Program is created by [lim495062](https://github.com/lim495062 "薛定谔的老花猫")
