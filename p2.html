@@ -1,7 +1,6 @@
-<html>
-<head>
+<html idmmzcc-ext-docid="1003520000"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link rel="shortcut icon" href="favicon.ico" />
+<link rel="shortcut icon" href="favicon.ico">
 <title>Euler's Method Calculator</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -10,12 +9,12 @@
 
 <div style="background-color:#1b1b1c;">
 <h1 class="head">Euler's Method Calculator</h1>
-<a class ="ripple" href="index.html">Home</a>
-<a class ="ripple" href="p2.html">How It Works?</a>
+<a class="ripple" href="index.html">Home</a>
+<a class="ripple" href="p2.html">How It Works?</a>
 </div>
 
 <div align="left">
-<h1 class="head3" >HOW IT WORKS?</h1>
+<h1 class="head3">HOW IT WORKS?</h1>
 </div>
 
 <div align="center">
@@ -30,8 +29,8 @@
                              </p>
 </div>
 
-<div align="center" style="width:1000px;">
-	<video width="1000" controls>
+<div style="width:1000px;" align="center">
+	<video controls="" width="1000">
   <source src="1080p.mov" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -41,8 +40,8 @@
       <h2 class="head2">Example Problem</h2>
 </div>
 
-<div align="center" style="width:1000px;">
-	<video width="1000" controls>
+<div style="width:1000px;" align="center">
+	<video controls="" width="1000">
   <source src="Example.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -54,24 +53,24 @@
 
 <div style="width:800px;margin-top:0px; margin-bottom:50px;">
 <p style="display:inline;">1. Graph generation: given an initial point, a differential equation and a step size, the solution curve of the differential matching the initial point is generated through Euler's method. More on how Euler's method works can be found in the corresponding video on this website
-<br><br>2. Estimating <i>y</i> at <i>x</i>: since a collection of Euler points, sorted according to their <i>x</i>-values, is generated and then connected to obtain the shape of the graph, it is possible to estimate the value of <i>y</i> at any value <i>x</i> = <i>x</i><sub>0</sub> in between two Euler points by finding two neighbouring Euler points <i>P</i>(<i>x</i><sub>1</sub>,<i>y</i><sub>1</sub>) and <i>Q</i>(<i>x</i><sub>2</sub>,<i>y</i><sub>2</sub>) such that <i>x</i><sub>0</sub> &#8712; (<i>x</i><sub>1</sub>,<i>x</i><sub>2</sub>). Afterwards, based on simple linear equations, it is known that the in order for the point at <i>x</i> = <i>x</i><sub>0</sub> to be on the solution curve, it must be on the line segment formed by the two Euler points P and Q. Therefore, the corresponding <i>y</i> value at <i>x</i> = <i>x</i><sub>0</sub> is <i>y</i><sub>0</sub> = <i>y</i><sub>1</sub> + (<i>x</i><sub>0</sub> - <i>x</i><sub>1</sub>) &#183; <sup><i>y</i><sub>0</sub> - <i>y</i><sub>1</sub></sup>&frasl;<sub><i>x</i><sub>2</sub> - <i>x</i><sub>1</sub></sub>
+<br><br>2. Estimating <i>y</i> at <i>x</i>: since a collection of Euler points, sorted according to their <i>x</i>-values, is generated and then connected to obtain the shape of the graph, it is possible to estimate the value of <i>y</i> at any value <i>x</i> = <i>x</i><sub>0</sub> in between two Euler points by finding two neighbouring Euler points <i>P</i>(<i>x</i><sub>1</sub>,<i>y</i><sub>1</sub>) and <i>Q</i>(<i>x</i><sub>2</sub>,<i>y</i><sub>2</sub>) such that <i>x</i><sub>0</sub> ∈ (<i>x</i><sub>1</sub>,<i>x</i><sub>2</sub>). Afterwards, based on simple linear equations, it is known that the in order for the point at <i>x</i> = <i>x</i><sub>0</sub> to be on the solution curve, it must be on the line segment formed by the two Euler points P and Q. Therefore, the corresponding <i>y</i> value at <i>x</i> = <i>x</i><sub>0</sub> is <i>y</i><sub>0</sub> = <i>y</i><sub>1</sub> + (<i>x</i><sub>0</sub> - <i>x</i><sub>1</sub>) · <sup><i>y</i><sub>0</sub> - <i>y</i><sub>1</sub></sup>⁄<sub><i>x</i><sub>2</sub> - <i>x</i><sub>1</sub></sub>
 
-<br><br>3. Finding solutions for <i>x</i> at <i>y</i>: similar to the "estimating <i>y</i> at <i>x</i>" feature, in order to find the <i>x</i>-values at <i>y</i> = <i>y</i><sub>0</sub>, the collection of Euler points is scanned through and every time two neighbouring points <i>P</i>(<i>x</i><sub>1</sub>,<i>y</i><sub>1</sub>) and <i>Q</i>(<i>x</i><sub>2</sub>,<i>y</i><sub>2</sub>) and  are found such that <i>y</i><sub>0</sub> &#8712; (<i>y</i><sub>1</sub>,<i>y</i><sub>2</sub>), then based on linear equations, it is known that as the solution point (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) is on the graph, then point (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) must also be on the line segment formed by points P and Q. Therefore, the corresponding <i>x</i> value at <i>y</i> = <i>y</i><sub>0</sub> is: <i>x</i><sub>0</sub> = <i>x</i><sub>1</sub> + (<i>x</i><sub>2</sub> - <i>x</i><sub>1</sub>) &#183; <sup><i>y</i><sub>0</sub> - <i>y</i><sub>1</sub></sup>&frasl;<sub><i>y</i><sub>2</sub> - <i>y</i><sub>1</sub>
+<br><br>3. Finding solutions for <i>x</i> at <i>y</i>: similar to the "estimating <i>y</i> at <i>x</i>" feature, in order to find the <i>x</i>-values at <i>y</i> = <i>y</i><sub>0</sub>, the collection of Euler points is scanned through and every time two neighbouring points <i>P</i>(<i>x</i><sub>1</sub>,<i>y</i><sub>1</sub>) and <i>Q</i>(<i>x</i><sub>2</sub>,<i>y</i><sub>2</sub>) and  are found such that <i>y</i><sub>0</sub> ∈ (<i>y</i><sub>1</sub>,<i>y</i><sub>2</sub>), then based on linear equations, it is known that as the solution point (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) is on the graph, then point (<i>x</i><sub>0</sub>,<i>y</i><sub>0</sub>) must also be on the line segment formed by points P and Q. Therefore, the corresponding <i>x</i> value at <i>y</i> = <i>y</i><sub>0</sub> is: <i>x</i><sub>0</sub> = <i>x</i><sub>1</sub> + (<i>x</i><sub>2</sub> - <i>x</i><sub>1</sub>) · <sup><i>y</i><sub>0</sub> - <i>y</i><sub>1</sub></sup>⁄<sub><i>y</i><sub>2</sub> - <i>y</i><sub>1</sub>
 
-</p>
+</sub></p>
 </div>
 
 <div align="center">
       <h2 class="head2">How to use the program</h2>
 </div>
 
-<div align="center" style="width:1000px;">
-	<video width="1000" controls>
+<div style="width:1000px;" align="center">
+	<video controls="" width="1000">
   <source src="Euler.mov" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 </div>
-
+      
 <br>
       
 <div align="center">
@@ -83,10 +82,11 @@
 Source code avaliable at <a id="link" href="https://github.com/lim495062/Euler-Method-Grapher">lim495062's GitHub</a>
 </p>
 </div>
-	
-<div align="center" style="width:100%; background-color:#1b1b1c; color:#FFFFFF; padding:10px;" >
+      
+<div style="width:100%; background-color:#1b1b1c; color:#FFFFFF; padding:10px;" align="center">
       <h5>Program and Website created by: Vedant Purohit, Michael Li, Abdul Arif and Raymond Hao</h5>
 </div>
 </div>
-</html>
 
+
+</body></html>
