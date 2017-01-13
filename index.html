@@ -2,6 +2,22 @@
 <head>
 </script>
 <script src="http://java.com/js/dtjava.js"></script>
+<script>
+
+    function launchApplication(jnlpfile) {
+	dtjava.launch(            {
+	    url : 'dist.jnlp',
+	    jnlp_content : 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGpubHAgc3BlYz0iMS4wIiB4bWxuczpqZng9Imh0dHA6Ly9qYXZhZnguY29tIiBocmVmPSJkaXN0LmpubHAiPgogIDxpbmZvcm1hdGlvbj4KICAgIDx0aXRsZT5FdWxlck1ldGhvZENhbGN1bGF0b3I8L3RpdGxlPgogICAgPHZlbmRvcj5BcHBsaWNhdGlvbiB2ZW5kb3I8L3ZlbmRvcj4KICAgIDxkZXNjcmlwdGlvbj5BcHBsaWNhdGlvbiBkZXNjcmlwdGlvbjwvZGVzY3JpcHRpb24+CiAgICA8b2ZmbGluZS1hbGxvd2VkLz4KICA8L2luZm9ybWF0aW9uPgogIDxyZXNvdXJjZXM+CiAgICA8ajJzZSB2ZXJzaW9uPSIxLjYrIiBocmVmPSJodHRwOi8vamF2YS5zdW4uY29tL3Byb2R1Y3RzL2F1dG9kbC9qMnNlIi8+CiAgICA8amFyIGhyZWY9ImRpc3QuamFyIiBzaXplPSIyNzkxMCIgZG93bmxvYWQ9Im51bGwiIC8+CiAgPC9yZXNvdXJjZXM+CiAgPGpmeDpqYXZhZngtZGVzYyAgd2lkdGg9IjE0NTAiIGhlaWdodD0iMTA1MCIgbWFpbi1jbGFzcz0iQ2FydGVzaWFuUGxhbmUiICBuYW1lPSJFdWxlck1ldGhvZENhbGN1bGF0b3IiIC8+CiAgPHVwZGF0ZSBjaGVjaz0iYmFja2dyb3VuZCIvPgo8L2pubHA+Cg=='
+	},
+				  {
+				      javafx : '8.0+'
+				  },
+				  {}
+		     );
+	return false;
+    }
+    
+</script>
     <script>
       function javafxEmbedCartesianPlane() {
       dtjava.embed(
