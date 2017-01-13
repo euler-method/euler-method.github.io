@@ -89,6 +89,7 @@ a {
     text-align: center;
     padding: 0px 0px;
     text-decoration:underline;
+    background-color: #232732;
     font-family: Copperplate Gothic Light, sans-serif;
     font-size:20px;
     font-weight:0;
@@ -124,9 +125,9 @@ a {
 }
 .button {
     width: 200px;
-	height: 200px;
-	background: red;
-	border-radius: 50%;
+    height: 200px;
+    background: red;
+    border-radius: 50%;
     background-color: #C4C4C4;
     margin-left: 100px;
     margin-right: 100px;
