@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<head>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.8.1/math.min.js"></script>
+	</head>
+	<body>
+		<!-- using BROWSER OBJECT MODEL (BOM) -->
+		<form name = "form1">
+			Differential dy/dx = <input type = "text" name = "differential"></br>
+			Step Size: <input type = "text" name = "stepSize"></br>
+			Initial X: <input type = "text" name = "initialX"></br>
+			Initial Y: <input type = "text" name = "initialY"></br>
+			X Needed: <input type = "text" name = "xNeeded"></br>
+			Min X: <input type = "text" name = "xMin"></br>
+			Max X: <input type = "text" name = "xMax"></br>
+			Min Y: <input type = "text" name = "yMin"></br>
+			Max Y: <input type = "text" name = "yMax"></br>
+			<input type = "button" value = "Calculate" onclick = "EulersMethod()" > </br>
+			<!--<input type = "button" value = "Calculate2" onclick = "h() ;" > </br>-->
+			<!--<button onclick = "h() ;">Process</button>-->
+			Y Ans: <input type = "text" name = "yAns" /></br>
+			<canvas id="myCanvas" width="900" height="600"></canvas>
+		</form>
+
+	
+
+		<script>
+			var minX;
+			var maxX;
+			var minY;
+			var maxY;
+			minX = -5;
+			maxX = 5;
+			minY = -5;
+			maxY = 5;
+
+			var width = 900;
+			var height = 600; 
+
+			var xScale;
+			var yScale;
+
+
+		function drawLine(x1, y1, x2, y2, xScale, yScale, colour){
+			var xAdjust = 0 - minX;
+			var yAdjust = 0 - minY;
+			var c=document.getElementById("myCanvas");
+			var ctx=c.getContext("2d");
+			ctx.beginPath();
+			ctx.strokeStyle = colour;
+			ctx.moveTo((x1+ xAdjust) * xScale, height - (y1+yAdjust) * yScale);
+			ctx.lineTo((x2 +  xAdjust)*xScale, height - (y2 + yAdjust) * yScale);
+			ctx.stroke();
+		}
+
+		function drawBackground(){
+			var c=document.getElementById("myCanvas");
+			var ctx=c.getContext("2d");
+			ctx.beginPath();
+			ctx.moveTo(0,0);
+			ctx.fillStyle="#FFFFFF";
+			ctx.fillRect(0, 0, width, height);
+			ctx.stroke();
+			ctx.strokeStyle = "#000000";
+			ctx.rect(0, 0, width, height);
+			ctx.stroke();
+		}
+
+		function EulersMethod(){
+			var parser = math.parser();
+			var differential = document.form1.differential.value;
+			var stepSize = math.parse(document.form1.stepSize.value).compile().eval();
+			var initialX = math.parse(document.form1.initialX.value).compile().eval();
+			var initialY = math.parse(document.form1.initialY.value).compile().eval();
+			var xNeeded = math.parse(document.form1.xNeeded.value).compile().eval();
+		
+			minX = math.parse(document.form1.xMin.value).compile().eval();
+			maxX = math.parse(document.form1.xMax.value).compile().eval();
+			minY = math.parse(document.form1.yMin.value).compile().eval();
+			maxY = math.parse(document.form1.yMax.value).compile().eval();
+
+			<!--minX = -20;
+			<!--maxX = 20;
+			<!--minY = -50;
+			<!--maxY = 100;
+
+			xScale = width / (maxX - minX);
+			yScale = height / (maxY - minY);
+
+			<!--differential = "x+y"
+			<!--stepSize = 0.02;
+			<!--initialX = 5;
+			<!--initialY = 5;
+			<!--xNeeded = 10;
+
+			drawBackground();
+			drawLine(0, minY, 0, maxY, xScale, yScale, "#000000");
+			drawLine(minX, 0, maxX, 0, xScale, yScale, "#000000");
+
+			var yAns;
+			if (stepSize <=0.0){
+				document.form1.stepSize.value = "Step size must be positive";
+				return;
+			}
+			if (minX >= maxX){
+				return;			
+			}
+			if (minY >= maxY){
+				return;
+			}
+			if (xNeeded == initialX){
+				yAns = initialY;
+			}
+			else if (xNeeded < initialX){
+				stepSize = - stepSize; 
+				var x1, x2, y1, y2;
+				x2 = initialX;
+				y2 = initialY;
+				for (x2 = initialX; x2 > xNeeded; x2+= stepSize){
+					y1 = y2;
+					y2 +=calculateChange (x2, y2, differential, stepSize);
+				} 
+				x1 = x2 - stepSize;
+				if (x2 == xNeeded){
+					yAns = y2;
+				}
+				else{
+					var m = (y2-y1)/(x2-x1);
+					yAns = m*xNeeded - m*x2 + y2
+				}
+				
+			}
+			else if (xNeeded > initialX){
+				var x1, x2, y1, y2;
+				x2 = initialX;
+				y2 = initialY;
+				for (x2 = initialX; x2 < xNeeded; x2+= stepSize, x1 += stepSize){
+					y1 = y2;
+					y2 +=calculateChange (x2, y2, differential, stepSize); // note, x2 at any point is really the value x1 should be
+					<!-- console.log(x1 + ", " + y1 + " | " + x2 + ", " + y2 );
+				} 
+				x1 = x2 - stepSize;
+				<!-- console.log("---"+x1 + ", " + y1 + " | " + x2 + ", " + y2 );
+				if (x2 == xNeeded){
+					yAns = y2;
+				}
+				else{
+					var m = (y2-y1)/(x2-x1);
+					yAns = m*xNeeded - m*x1 + y1
+				}
+			}
+
+			document.form1.yAns.value = "" + yAns;
+
+			drawGraph(initialX, initialY, differential, stepSize);
+		}
+		
+		function drawGraph(initialX, initialY, differential, dx){
+			var x1, x2, y1, y2;
+			x2 = initialX;
+			y2 = initialY;
+			var newStep = Math.abs(dx);
+			for (x2 = initialX; x2 < maxX; x2+= newStep, x1 += newStep){
+				y1 = y2;
+				y2 +=calculateChange (x2, y2, differential, newStep); // note, x2 at any point is really the value x1 should be
+				drawLine(x2, y1, (x2+newStep), y2, xScale, yScale, "#FF0000");
+			} 
+			x1 = x2 - newStep;
+
+			x2 = initialX;
+			y2 = initialY;
+			newStep = -newStep;
+			for (x2 = initialX; x2 > minX; x2+= newStep, x1 += newStep){
+				y1 = y2;
+				y2 +=calculateChange (x2, y2, differential, newStep); // note, x2 at any point is really the value x1 should be
+				drawLine(x2, y1, (x2+newStep), y2, xScale, yScale, "#FF0000");
+			} 
+			x1 = x2 - newStep;
+		}
+
+
+		function calculateChange(x1, y1, differential, dx){
+			var parser = math.parser();
+			var scope = {
+    				x: x1,
+    				y: y1
+			};
+			var node1 = math.parse(differential, scope);
+			var code1 = node1.compile();
+			var slope = code1.eval(scope);
+			return dx * slope;
+		}
+
+
+		</script>
+	</body>
